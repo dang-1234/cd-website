@@ -370,24 +370,33 @@
 				</div>
 			</section>
 
-			<!--<section class="newsletter section text-light">
+			<section class="newsletter section text-light">
                 <div class="container-sm">
                     <div class="newsletter-inner section-inner">
                         <div class="newsletter-header text-center">
                             <h2 class="section-title mt-0">Stay in the know</h2>
-                            <p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation.</p>
+                            <p class="section-paragraph">Like the idea and want to deploy it in your environment or want to keep track of product updates ? <br><br/> Please submit your email below.</p>
                         </div>
                         <div class="footer-form newsletter-form field field-grouped">
-                            <div class="control control-expanded">
-                                <input class="input" type="email" name="email" placeholder="Your best email&hellip;">
+                            <div class="control control-expanded" id="email-form1">
+                               <form id="frm1" action="/" method="post" >
+                                       <input class="input" type="email" name="email2" placeholder="Your email address">
+                                </form>
+									 
+								</div>
+								<p class="section-paragraph emailSuccess slide-bottom" style="color: #FFF; font-weight: bold;margin-left:20px"> Thank you for your interest!<br/> We will reach out to you as soon as possible.</p>
+								<div class="control" id="email-button1">
+									<!-- <a class="button button-primary button-block" href="#" onclick="submitForm()">SUBMIT</a> -->
+									<a class="button button-primary button-block button-shadow" href="#"onclick="submitForm()">COUNT ME IN !</a>
+								</div>
                             </div>
                             <div class="control">
-                                <a class="button button-primary button-block button-shadow" href="#">Early access</a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>-->
+            </section>
         </main>
 
         <footer class="site-footer">
@@ -436,16 +445,17 @@ event.preventDefault();
     url = 'https://cd-send-email.glitch.me/sendemail';
 	//console.log('email: '+ email)
 	$('#email-form').hide();
+	$('#email-form1').hide();
 	$('#email-button').hide();
-	   $(".emailSuccess").show();
+	$('#email-button1').hide();
+	$(".emailSuccess").show();
  
   // Send the data using post
   var posting = $.post( url, { data: {email: email }} );
  
   // Put the results in a div
   posting.done(function( data ) {
-    //var content = $( data ).find( "#content" );
-    //$( "#result" ).empty().append( content );
+
 	
   });
    };
