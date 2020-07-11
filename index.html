@@ -74,7 +74,7 @@
                                      </form>
 									 
 								</div>
-								<p class="emailSuccess slide-bottom" style="color: #4043e5; font-weight: bold"> Thank you for your interest !<br/> We will reach out to you as soon as possible.</p>
+								<p class="emailSuccess slide-bottom" id="emailSuccess" style="color: #4043e5; font-weight: bold; display: none"> Thank you for your interest !<br/> We will reach out to you as soon as possible.</p>
 								<div class="control" id="email-button">
 									<a class="button button-primary button-block" href="#" onclick="submitForm()">SUBMIT</a>
 								</div>
@@ -457,6 +457,7 @@ $(document).ready(function() {
 
 function initialFunc(){
    $(".emailSuccess").hide();
+   document.getElementById("myDIV").style.display = "block"; 
    document.getElementById("frm1").reset(); 
    document.getElementById("frm2").reset();
 }
